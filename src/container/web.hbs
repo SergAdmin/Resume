@@ -1,0 +1,43 @@
+<div>
+    {{#with web}}
+    <main>
+
+        {{> title big=true
+        data='List of languages'}}
+        {{> line }}
+
+        <section>
+            <div>
+                <ol>
+                    {{#each languages}}
+                    <li>
+                        <p>
+                        <h3>Name: {{name}}</h3>
+                        </p>
+                        <p>Version: {{version}}</p>
+                        <p>Description: {{description}}</p>
+
+                        {{#if elements includeZero=false}}
+                        <h4>Elements :</h4>
+                        {{> element text=elements }}
+                        {{else}}
+                        {{#if properties includeZero=false}}
+                        <h4>Properties :</h4>
+                        {{> element text=properties }}
+                        {{else}}
+                        <h4>Functions :</h4>
+                        {{> element text=functions }}
+                        {{/if}}
+                        {{/if}}
+
+
+
+                    </li>
+                    {{/each}}
+                </ol>
+            </div>
+        </section>
+
+    </main>
+    {{/with}}
+</div>

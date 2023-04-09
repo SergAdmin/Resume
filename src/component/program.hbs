@@ -1,11 +1,8 @@
 {{#with text}}
 <div>
-    {{log "LOG2: " this }}
-
     {{#with museum}}
     {{name}}
     {{>location text=location }}
-
     <ol>
         {{#each exhibits}}
         <li>
@@ -41,7 +38,8 @@
     <div>
         {{#with guide}}
 
-        <p>Guide: Name - {{name}}, Language - {{language}},
+        <p>Guide: Name - {{name}},
+            Language - {{language}},
             Rating - {{rating}}</p>
 
         {{/with}}
