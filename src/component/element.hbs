@@ -1,0 +1,22 @@
+{{!-- {{log 'LOG :' this}} --}}
+<ul>
+    {{#each text}}
+    <li>
+        <p>{{name}} - {{description}}</p>
+
+        {{#if attributes includeZero=false}}
+        <h5>Attributes :</h5>
+        {{> atribut text=attributes }}
+        {{else}}
+        {{#if values includeZero=false}}
+        <h5>Values :</h5>
+        {{> atribut text=values }}
+        {{else}}
+        <h5>Parameters :</h5>
+        {{> atribut text=parameters }}
+        {{/if}}
+        {{/if}}
+
+    </li>
+    {{/each}}
+</ul>

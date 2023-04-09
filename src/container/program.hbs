@@ -2,7 +2,8 @@
     {{#with program}}
     <main>
         {{#with excursion}}
-        {{> title big=true data='Program of excursion'}}
+        {{> title big=true
+        data='Program of excursion'}}
         {{> line }}
 
         <section>
@@ -12,7 +13,8 @@
                 <p> Date {{date}}</p>
                 {{#with location}}
                 <p>
-                <address>{{city}}, {{country}} </address>
+                <address>{{city}},
+                    {{country}} </address>
                 </p>
                 {{/with}}
             </div>
