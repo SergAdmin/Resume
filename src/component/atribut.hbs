@@ -1,22 +1,16 @@
 <ul>
     {{#each text}}
     <li>
-
         {{#if name includeZero=false}}
         <p>Name: {{name}};</p>
         {{/if}}
-
-
         {{#if value includeZero=false}}
         <p>Value: {{value}};</p>
         {{/if}}
-
         {{#if type}}
         <p>Type: {{type}};</p>
         {{/if}}
-
         Description: <dfn>{{description}}</dfn></p>
-
     </li>
     {{/each}}
 </ul>
