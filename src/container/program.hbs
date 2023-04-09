@@ -1,0 +1,47 @@
+<div>
+    {{#with program}}
+    <main>
+        {{#with excursion}}
+        {{> title big=true data='Program of excursion'}}
+        {{> line }}
+
+        <section>
+            <div>
+                {{> title big=false
+                data=name }}
+                <p> Date {{date}}</p>
+                {{#with location}}
+                <p>
+                <address>{{city}}, {{country}} </address>
+                </p>
+                {{/with}}
+            </div>
+            {{> line }}
+
+
+            <div>
+                <ul>
+                    {{#each program}}
+                    <li>
+                        <h3>{{name}}</h3>
+                        <p>{{type}}</p>
+                        <p>{{duration}}</p>
+                        <p>Details:</p>
+
+                        <ul>
+                            <li>
+                                {{> program text=details }}
+                            </li>
+                        </ul>
+
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+
+        </section>
+        {{/with}}
+    </main>
+    {{/with}}
+</div>

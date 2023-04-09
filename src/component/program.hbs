@@ -1,0 +1,50 @@
+{{#with text}}
+<div>
+    {{log "LOG2: " this }}
+
+    {{#with museum}}
+    {{name}}
+    {{>location text=location }}
+
+    <ol>
+        {{#each exhibits}}
+        <li>
+            <p>Art: {{name}}</p>
+            {{#if artist includeZero=false}}
+            <p>Artist: {{artist}}</p>
+            {{/if}}
+            <p>Style: {{description}}</p>
+            <p>AudioGuide: {{#if audio_guide}} (Yes)
+                {{else}} (No)
+                {{/if}}
+            </p>
+        </li>
+        {{/each}}
+    </ol>
+    {{/with}}
+
+    {{#with venue}}
+    {{name}}
+    {{>location text=location }}
+    {{/with}}
+
+    <ol>
+        {{#each performers}}
+        <li>
+            <p>{{name}}</p>
+            <p>{{type}}</p>
+        </li>
+        {{/each}}
+    </ol>
+
+
+    <div>
+        {{#with guide}}
+
+        <p>Guide: Name - {{name}}, Language - {{language}},
+            Rating - {{rating}}</p>
+
+        {{/with}}
+    </div>
+</div>
+{{/with}}
