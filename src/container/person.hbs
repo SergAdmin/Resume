@@ -18,7 +18,10 @@
       <div>
         {{#with address}}
         <p><b>Address: </b>
-        <address> {{street}}, {{city}}, {{state}}, {{zip}}, {{country}}</address>
+        <address>
+          {{street}}, {{city}}, {{state}},
+          {{zip}}, {{country}}
+        </address>
         </p>
         {{/with}}
       </div>
@@ -27,7 +30,8 @@
     {{> line }}
     <section>
 
-      {{> title big=false data='Education' }}
+      {{> title big=false
+      data='Education' }}
       <ol>
         {{#each education}}
         <li>
@@ -43,12 +47,12 @@
         </li>
         {{/each}}
       </ol>
-
     </section>
 
     {{> line }}
     <section>
-      {{> title big=false data='Work experience' }}
+      {{> title big=false
+      data='Work experience' }}
       <div>
         <ul>
           {{#each workExperience}}
@@ -61,7 +65,8 @@
             <h4>{{company}}</h4>
             </p>
             <p>from {{startDate}} to {{endDate}}</p>
-            <p>{{responsibilities}}</p>
+            {{> mass text=responsibilities }}
+
             <p>{{year_founded}}</p>
             <p>{{industry}}</p>
 
@@ -99,7 +104,8 @@
                               <p>
                                 {{#with team_leader}}
                                 <b>{{title}}</b> -
-                                {{> link text=name href=email blank=true noLine=true }}
+                                {{> link text=name href=email
+                                blank=true noLine=true }}
 
                                 {{/with}}
                               </p>
@@ -114,11 +120,12 @@
 
                                     <p>
                                       <b>{{title}}</b> -
-                                      {{> link text=name href=email blank=true noLine=true }}
+                                      {{> link text=name href=email
+                                      blank=true noLine=true }}
                                     </p>
 
                                     <p>
-                                      <b>Skills: </b> {{skills}}
+                                      <b>Skills: </b> {{> mass text=skills }}
                                     </p>
 
                                     <div>
@@ -131,7 +138,7 @@
                                           </p>
 
                                           <p>
-                                            <b>Technologies: </b> {{technologies}}
+                                            <b>Technologies: </b> {{> mass text=technologies }}
                                           </p>
 
                                           <div>
