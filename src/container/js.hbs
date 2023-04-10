@@ -1,0 +1,76 @@
+<div>
+  {{log 'Log :' name}}
+
+  <main>
+    {{> title big=true data=name}}
+    {{> line }}
+    <section>
+      <div>
+        <p>{{> title big=true data='About JS' }}</p>
+        <p>Info: {{description}}</p>
+        <p>
+          History: was created in {{year}}, founder - {{founder}}
+        </p>
+        {{> line }}
+        <div>
+          <h4>Types:</h4>
+          {{> mass text=types }}
+          <br>
+          <h4>Syntax:</h4>
+          <ol>
+            {{#with syntax}}
+            <li>
+              {{#if variables includeZero=false}}
+              <b>Variables: </b>{{> mass text=variables }}
+              {{/if}}
+
+              {{#if functions includeZero=false}}
+              <b>Functions: </b>{{> mass text=functions }}
+              {{/if}}
+
+              {{#if conditionals includeZero=false}}
+              <b>Conditionals: </b>{{> mass text=conditionals }}
+              {{/if}}
+
+              {{#if loops includeZero=false}}
+              <b>Loops: </b>{{> mass text=loops }}
+              {{/if}}
+
+              {{#if classes includeZero=false}}
+              <b>Classes: </b>{{> mass text=classes }}
+              {{/if}}
+
+            </li>
+            {{/with}}
+          </ol>
+          <br>
+
+          <h4>Features:</h4>
+          {{> mass text=features }}
+          <br>
+
+          <h4>Libraries:</h4>
+          {{> mass text=libraries }}
+          <br>
+
+          <h4>Tools:</h4>
+          {{> mass text=tools }}
+          <br>
+
+          <h4>Community:</h4>
+          <ul>
+            {{#each community}}
+            <p>
+              <li>{{type}} - {{name}}</li>
+            </p>
+            {{/each}}
+          </ul>
+          <br>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+</div>
