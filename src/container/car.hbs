@@ -1,0 +1,138 @@
+<div>
+
+  <main>
+    {{> title big=true data=make}}
+    {{> line }}
+    <section>
+      <div>
+
+        <div>
+          Automobile:
+          {{make}}
+          {{model}}
+          {{year}}
+          {{color}}
+        </div>
+
+        <div>
+          Features
+          {{#with features}}
+          <div>
+            {{#with interior}}
+            <div>
+              {{#with seats}}
+              <p>{{material}} {{color}} {{heated}} {{ventilated}}</p>
+              {{/with}}
+            </div>
+
+            <div>
+              {{#with dashboard}}
+              <p>{{material}} {{color}}
+                {{#with display}}
+              <div>
+                {{type}} {{size}}
+                {{resolution}} {{touchscreen}}
+              </div>
+              {{/with}}
+              </p>
+              {{/with}}
+            </div>
+
+            <div>
+              {{#with audio}}
+              <p>{{system}} {{speakers}}
+                {{subwoofer}} {{bluetooth}} {{USB}}
+              </p>
+              {{/with}}
+            </div>
+            {{/with}}
+          </div>
+
+          <div>
+            {{#with exterior}}
+            <div>
+              {{#with wheels}}
+              <div>
+                <p>{{size}} {{type}} {{color}}</p>
+              </div>
+              {{/with}}
+            </div>
+
+            <div>
+              {{#with headlights}}
+              <p>{{type}} {{brightness}} {{automatic}}</p>
+              {{/with}}
+            </div>
+
+            <div>
+              {{#with sunroof}}
+              <p>{{type}} {{size}} {{automatic}}</p>
+              {{/with}}
+            </div>
+            {{/with}}
+          </div>
+
+          <div>
+            {{#with safety}}
+            <div>
+              {{#with airbags}}
+              <p>{{front}} {{side}} {{knee}} {{rear}}</p>
+              {{/with}}
+            </div>
+            {{/with}}
+          </div>
+
+          {{/with}}
+        </div>
+
+
+
+        <div>
+          Engine
+          {{#with engine}}
+          <div>
+            {{type}}
+            {{displacement}}
+            {{horsepower}}
+            {{torque}}
+            <div>
+              {{#with transmission}}
+              {{type}} {{gears}}
+              {{/with}}
+            </div>
+          </div>
+          {{/with}}
+        </div>
+
+        <div>
+          Fuel_economy
+          {{#with fuel_economy}}
+          {{city}}
+          {{highway}}
+          {{combined}}
+          {{/with}}
+        </div>
+
+        <div>
+          Price
+          {{#with price}}
+          {{base}}
+          {{destination}}
+          {{#with options}}
+          {{navigation}} {{moonroof}} {{premium_paint}}
+          {{/with}}
+
+          {{total}}
+          {{/with}}
+        </div>
+
+      </div>
+    </section>
+    <div class="p-5">
+      <h1>{{make}} {{model}} {{year}} {{color}}</h1>
+
+      <button type="button" class="btn btn-primary">Купити</button>
+    </div>
+  </main>
+
+</div>
