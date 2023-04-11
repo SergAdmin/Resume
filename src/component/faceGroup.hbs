@@ -1,0 +1,29 @@
+{{#if groups includeZero=false}}
+<ul>
+  <h4>Groups</h4>
+  <ul>
+    {{#each groups}}
+    <li>
+      {{>facePersone text=groups }}
+
+      {{#if members includeZero=false}}
+      <ul>
+        <h4>Members</h4>
+        <ul>
+          {{#each members}}
+          <li>
+            {{>facePersone text=members }}
+          </li>
+          {{/each}}
+        </ul>
+
+      </ul>
+
+      {{/if}}
+    </li>
+    {{/each}}
+  </ul>
+
+</ul>
+
+{{/if}}
