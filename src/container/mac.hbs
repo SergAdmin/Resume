@@ -1,0 +1,146 @@
+<div>
+
+  <main>
+    {{> title big=true data=name}}
+    {{> line }}
+    <section>
+      <div>
+        {{name}}
+        {{description}}
+        {{price}}
+        {{category}}
+
+        {{> title big=true data='Features'}}
+        {{#with features}}
+        <div>
+          <h4>Processor</h4>
+          {{#with processor}}
+          <div>
+            <p>{{brand}},
+              {{model}},
+              {{speed}},
+              {{cores}},
+              {{cache}}</p>
+          </div>
+          {{/with}}
+        </div>
+
+        <div>
+          <h4>Memory</h4>
+          {{#with memory}}
+          <div>
+            <p>{{type}}{{size}}{{speed}}</p>
+          </div>
+          {{/with}}
+        </div>
+
+        <div>
+          <h4>Storage</h4>
+          {{#with storage}}
+          <div>
+            <p>{{type}}{{size}}</p>
+          </div>
+          {{/with}}
+        </div>
+
+        <div>
+          <h4>Display</h4>
+          {{#with display}}
+          <div>
+            <p>
+              {{size}}
+              {{resolution}}
+              {{technology}}
+              {{color_space}}
+              {{brightness}}
+              {{refresh_rate}}
+            </p>
+          </div>
+          {{/with}}
+        </div>
+
+        <div>
+          <h4>Graphics</h4>
+          {{#with graphics}}
+          <div>
+            <p>{{brand}}{{model}}{{memory}}</p>
+          </div>
+          {{/with}}
+        </div>
+
+        <div>
+          <h4>Ports</h4>
+          <ul>
+            {{#each ports}}
+            <li>
+              <p>
+                {{type}}
+                {{count}}
+                {{#if features includeZero=false }}
+                {{> mass text=features }}
+                {{/if}}
+              </p>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+
+        <div>
+          <h4>Battery</h4>
+          {{#with battery}}
+          <div>
+            <p>{{type}}{{capacity}}{{life}}</p>
+          </div>
+          {{/with}}
+        </div>
+
+        <div>
+          <h4>Weight</h4>
+
+          <div>
+            <p>{{weight}}</p>
+          </div>
+
+        </div>
+
+        <div>
+          <h4>Dimensions</h4>
+          {{#with dimensions}}
+          <div>
+            <p>{{height}}{{width}}{{depth}}</p>
+          </div>
+          {{/with}}
+        </div>
+
+        <div>
+          <h4>Operating_system</h4>
+
+          <div>
+            <p>{{operating_system}}</p>
+          </div>
+
+        </div>
+
+        <div>
+          <h4>Accessories</h4>
+          <ul>
+            {{#each accessories}}
+            <li>
+              <p>{{name}}{{price}}</p>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+        {{/with}}
+      </div>
+    </section>
+
+    <div class="p-5">
+      <h1>{{name}} {{price}}</h1>
+
+      <button type="button" class="btn btn-primary">Купити</button>
+    </div>
+
+  </main>
+
+</div>
