@@ -53,7 +53,9 @@
                   </ul>
                   {{/if}}
 
-                  {{> faceGroup text=groups }}
+                  {{#if groups includeZero=false}}
+                      {{> faceGroup text=groups }}
+                  {{/if}}
 
                 </div>
               </div>
