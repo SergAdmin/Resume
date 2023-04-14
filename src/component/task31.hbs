@@ -1,0 +1,29 @@
+<div class="row">
+    {{#each href}}
+    <div class="col-4 g-3">
+
+        <a href={{href}}>{{href}}</a>
+    </div>
+    <div class="col-4 g-3">
+
+        <a class="btn btn-outline-dark" href={{href}}>{{text}}</a>
+    </div>
+    <div class="col-4 g-3">
+        <a class="btn btn-outline-info">{{text}}</a>
+    </div>
+    {{/each}}
+
+    {{#each link}}
+    <div class="col-4 g-3">
+
+        <a href={{link}}>{{link}}</a>
+    </div>
+    <div class="col-4 g-3">
+
+        <a class="btn btn-outline-dark" href={{link}}>{{name}}</a>
+    </div>
+    <div class="col-4 g-3">
+        <a class="btn btn-outline-info">{{name}}</a>
+    </div>
+    {{/each}}
+</div>
