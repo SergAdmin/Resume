@@ -1,0 +1,29 @@
+<div class="mt-2">
+    <main>
+        <section class="row">
+
+            {{! <p>========================</p> }}
+
+            <div class="col-8">
+
+                <ol class="breadcrumb">
+                    {{> breadcrumb breadcrumb=breadcrumb}}
+                </ol>
+            </div>
+            {{! <p>========================</p> }}
+            {{> shopcard text=newsData}}
+            {{! <p>========================</p> }}
+            {{> line}}
+
+            {{> shoppost text=newsOtherBlock}}
+
+
+            {{> line}}
+
+            {{! <p>========================</p> }}
+            {{> shopaction service=service}}
+            {{! <p>========================</p> }}
+
+        </section>
+    </main>
+</div>

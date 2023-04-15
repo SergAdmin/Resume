@@ -1,0 +1,27 @@
+{{#with text}}
+
+<h3 class="card-title text-center m-2">{{title}}</h3>
+{{#each cards}}
+<div class="col-3 p-1 pb-2">
+
+    <div class="card text-bg-dark">
+        <div class="card-header">
+            <span>{{title}}</span>
+            {{#if isTop}}
+            <span class="badge rounded-pill text-bg-danger">Top</span>
+            {{/if}}
+
+            {{#if idNew}}
+            <span class="badge rounded-pill text-bg-success">New</span>
+            {{/if}}
+        </div>
+
+        <div class="card-body">
+            <span>{{description}}</span>
+        </div>
+
+    </div>
+
+</div>
+{{/each}}
+{{/with}}
