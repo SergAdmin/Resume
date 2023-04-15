@@ -1,0 +1,24 @@
+{{#with text}}
+
+
+<div class="card p-0">
+
+    <img src={{image}} class="card-img-top">
+
+    <div class="card-title">
+
+        <span class="text-capitalize">{{title}} </span>
+
+        {{#if isHot}}
+        <span class="btn btn-warning btn-sm rounded-pill text-uppercase">Hot</span>
+        {{/if}}
+        {{#if isNew}}
+        <span class="btn btn-primary  btn-sm rounded-pill">New</span>
+        {{/if}}
+        <div class="card-body">
+            <p class="text-capitalize">{{description}} </p>
+        </div>
+    </div>
+</div>
+
+{{/with}}

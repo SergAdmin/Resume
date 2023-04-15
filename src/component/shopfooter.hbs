@@ -1,0 +1,14 @@
+{{> line}}
+{{#each footer}}
+<div class="nav col-2 ms-4">
+    {{!-- {{log 'LOG ' this}} --}}
+    {{#each this}}
+    <li class="nav-item">
+        <a href={{this.link}} class="nav-link">{{this.text}}</a>
+    </li>
+    {{/each}}
+    <li class="nav-item">
+        <a href="#" class="nav-link  disabled">Disabled</a>
+    </li>
+</div>
+{{/each}}

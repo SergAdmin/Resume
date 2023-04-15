@@ -1,0 +1,146 @@
+<div>
+    <main>
+        <section class='row'>
+
+            {{! <p>========================</p> }}
+
+            <div class="col-8">
+                <ol class="breadcrumb">
+                    {{#each breadcrumb}}
+                    <li class="breadcrumb-item">
+                        <a href={{url}}>{{name}}</a>
+                    </li>
+                    {{/each}}
+                </ol>
+            </div>
+            {{! <p>========================</p> }}
+
+            {{#with productData}}
+            {{!-- ++++++++++++++++++++++++++++++ --}}
+
+            <div class="col-5">
+                <div class="card">
+                    <img src={{img}} class="card-img-top mb-5">
+                    {{#with info}}
+                    <div class="card-title">
+
+                        <p class="text-capitalize">{{title}} </p>
+                        <p class="text-capitalize">{{about}} </p>
+                        <p class="text-capitalize">{{price}} </p>
+                        {{#each category}}
+                        {{#if isHot}}
+                        <p class="btn btn-primary btn-sm rounded-pill text-uppercase">{{name}}</p>
+                        {{/if}}
+                        {{#if isNew}}
+                        <p class="btn btn-danger  btn-sm rounded-pill">{{name}}</p>
+                        {{/if}}
+                        {{#if isBonus}}
+                        <p class="btn btn-danger  btn-sm rounded-pill">{{name}}</p>
+                        {{/if}}
+                        {{/each}}
+
+                    </div>
+                    {{/with}}
+                </div>
+
+            </div>
+
+            {{!-- ++++++++++++++++++++++++++++++++++ --}}
+
+            <div class="col-6">
+
+
+                <table class="table table-bordered mb-0">
+                    {{#with item}}
+                    <thead>
+                        <tr>
+                            {{#each head}}
+                            <th class=" text-capitalize">{{this}}</th>
+                            {{/each}}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each body}}
+                        <tr>
+
+                            {{#each this}}
+                            <td>{{this}}</td>
+                            {{/each}}
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                    {{/with}}
+                </table>
+
+
+                {{#with param}}
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="text-capitalize">{{title}}</span>
+                    </div>
+
+                    <ul class="list-group">
+                        {{#each list}}
+                        <li class="list-group-item">{{this}}</li>
+                        {{/each}}
+                    </ul>
+
+                </div>
+
+                {{/with}}
+
+                {{#with alert}}
+
+                {{#if isError}}
+                <p class="alert alert-danger p-2"> {{text}}</p>
+                {{/if}}
+                {{/with}}
+
+
+            </div>
+
+            {{!-- ++++++++++++++++++++++++++++++++++ --}}
+
+            <div class="card">
+                <div class="card-body mt-3">
+
+                    {{#each actionList}}
+                    {{#if isWarning}}
+                    <p class="btn btn-warning">{{name}}</p>
+                    {{/if}}
+                    {{#if isError}}
+                    <p class="btn btn-outline-danger">{{name}}</p>
+                    {{/if}}
+                    {{#if isSuccess}}
+                    <p class="btn btn-success">{{name}}</p>
+                    {{/if}}
+                    {{#if isGood}}
+                    <p class="btn btn-outline-success">{{name}}</p>
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+
+            {{/with}}
+
+            {{! <p>========================</p> }}
+
+            {{#with goodsOtherBlock}}
+            <h4 class="text-center m-3">{{title}}</h4>
+            {{#each cards}}
+            <div class="col-4 mb-2">
+
+                {{> shopcard text=this}}
+
+            </div>
+            {{/each}}
+            {{/with}}
+
+            {{! <p>========================</p> }}
+
+            {{> shopaction service=service}}
+
+        </section>
+    </main>
+</div>
