@@ -3,11 +3,42 @@
 
 <div class="card p-0">
 
+    {{#if image includeZero=false}}
     <img src={{image}} class="card-img-top">
+    {{else}}
+    {{#if photo includeZero=false}}
+    <img src={{photo}} class="card-img-top">
+    {{/if}} {{/if}}
+
 
     <div class="card-title">
 
+        {{#if title includeZero=false}}
         <span class="text-capitalize">{{title}} </span>
+        {{/if}}
+
+        {{#if head includeZero=false}}
+        {{#with head}}
+        <h4 class="text-capitalize mt-4">{{heading}} </h4>
+        <div class="card-body">
+            <span>{{description}} </span>
+        </div>
+        {{/with}}
+        {{/if}}
+
+        {{#if body includeZero=false}}
+        <div class="card-body">
+            <ul>
+                {{#each body}}
+                <li>
+                    <p>{{title}} </p>
+
+                    <p>{{text}} </p>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/if}}
 
         {{#if isHot}}
         <span class="btn btn-warning btn-sm rounded-pill text-uppercase">Hot</span>

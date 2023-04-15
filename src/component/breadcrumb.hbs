@@ -1,0 +1,12 @@
+{{#each breadcrumb}}
+{{#if url includeZero=false}}
+<li class="breadcrumb-item">
+    <a href={{url}}>{{name}}</a>
+</li>
+{{else}}
+<li class="breadcrumb-item active">{{name}}
+
+</li>
+{{/if}}
+
+{{/each}}
