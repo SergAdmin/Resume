@@ -10,48 +10,61 @@
                 <div class="card">
                     <div class="card-body">
                         {{#with heading}}
-
+                        {{#with main}}
                         <div class="card">
                             <div class="card-body">
-                                <h1>{{main.title}}</h1>
-                                {{> task21 text=main }}
+                                <h1>{{title}}</h1>
+                                <p>{{text}}</p>
                                 <br>
-                                <p><button type="button" class="btn btn-primary">Primary</button></p>
-                                <p><button type="button" class="btn btn-outline-info">Outline Primary</button></p>
+                                {{#with button_text}}
+                                <p><button type="button" class="btn btn-primary">{{solid}}</button></p>
+                                <p><button type="button" class="btn btn-outline-info">{{outline}}</button></p>
+                                {{/with}}
+                                {{!-- {{> task21 text=main }} --}}
                             </div>
 
                         </div>
+                        {{/with}}
                         <br>
-                        <br>
+
+                        {{#with second}}
                         <div class="card">
                             <div class="card-body">
-                                <h2>{{second.title}}</h2>
-                                {{> task21 text=second }}
+                                <h2>{{title}}</h2>
+                                <p>{{text}}</p>
+                                {{!-- {{> task21 text=second }} --}}
                                 <br>
-                                <p><button type="button" class="btn btn-secondary">Secondary</button></p>
-                                <p><button type="button" class="btn btn-outline-secondary">Outline Secondary</button>
+                                {{#with button_text}}
+                                <p><button type="button" class="btn btn-secondary">{{solid}}</button></p>
+                                <p><button type="button" class="btn btn-outline-secondary">{{outline}}</button>
                                 </p>
+                                {{/with}}
                             </div>
                         </div>
+                        {{/with}}
                         <br>
-                        <br>
+
+                        {{#with subblock}}
                         <div class="card">
                             <div class="card-body">
-                                <h3>{{subblock.title}}</h3>
-                                {{> task21 text=subblock }}
+                                <h3>{{title}}</h3>
+                                <p>{{text}}</p>
+                                {{!-- {{> task21 text=subblock }} --}}
                                 <br>
-                                <p><button type="button" class="btn btn-dark">Dark</button></p>
-                                <p><button type="button" class="btn btn-outline-dark">Dark</button></p>
+                                {{#with button_text}}
+                                <p><button type="button" class="btn btn-dark">{{solid}}</button></p>
+                                <p><button type="button" class="btn btn-outline-dark">{{outline}}</button></p>
+                                {{/with}}
                             </div>
                         </div>
 
-
+                        {{/with}}
                         {{/with}}
 
                     </div>
                 </div>
             </div>
-
+            {{!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ --}}
             <br>
             <br>
             <div>
@@ -60,25 +73,32 @@
 
                         {{#with nested_display}}
                         <p class="display-1">{{title}}</p>
-                        {{> task21 text=nested_display }}
+
+                        {{!-- {{> task21 text=nested_display }} --}}
+
                         <div class="card">
                             <div class="card-body">
+                                {{#with children_display}}
+                                <p class="display-4">{{title}}</h4>
+                                <p>{{text}}</p>
 
-                                <p class="display-4">{{children_display.title}}</h4>
-
-                                    {{> task21 text=children_display }}
-
-                                <p><button type="button" class="btn btn-outline-warning">Warning</button></p>
-
-                                <p>
-                                <h6>{{header_text}}</h6>
-                                </p>
+                                {{!-- {{> task21 text=children_display }} --}}
                                 {{#with button}}
-                                <p><button type="button" class="btn btn-primary">{{text}}</button></p>
+                                <p><button type="button" class="btn btn-outline-warning">{{text}}</button></p>
+                                {{/with}}
                                 {{/with}}
                             </div>
                         </div>
+                        <p>
+                        <h6>{{header_text}}</h6>
+                        </p>
+                        {{#with button}}
+                        <p><button type="button" class="btn btn-primary">{{text}}</button></p>
+
                         {{/with}}
+
+                        {{/with}}
+
                     </div>
                 </div>
 
@@ -93,14 +113,12 @@
                         <p class="text-uppercase">{{title}}</p>
 
 
-                        <p>Title: {{title}}</p>
-                        <p>Text: {{text}}</p>
+                        <p class="text-lowercase">{{text}}</p>
+                        {{!-- <p> {{text}}</p> --}}
 
-                        <br>
                         {{#with button}}
-                        <p><button type="button" class="btn btn-link" href={{url}}>{{text}}</button></p>
+                        <p><button type=" button" class="btn btn-link" href={{url}}>{{text}}</button></p>
                         {{/with}}
-                        <br>
 
                         <br>
                         <div class="card">
