@@ -187,16 +187,64 @@
             {{#with footer}}
             <h5>{{title}}</h5>
 
+            {{!-- <div> --}}
 
-            {{> task31 href=navigation }}
+                {{#each navigation}}
 
-            {{> task31 link=socialMedia }}
+                <div class="col-4 g-3">
 
-            {{> task31 link=partners }}
+                    <a href={{href}}>{{text}}</a>
+                </div>
+                <div class="col-4 g-3">
 
-            {{/with}}
-</div>
+                    <a class="btn btn-outline-dark" href={{href}}>{{text}}</a>
+                </div>
+                <div class="col-4 g-3">
+                    <a class="btn btn-outline-info">{{text}}</a>
+                </div>
+                {{/each}}
 
-</section>
-</main>
+
+                {{#each socialMedia}}
+                <div class="col-4 g-3">
+
+                    <a href={{link}}>{{name}}</a>
+                </div>
+                <div class="col-4 g-3">
+
+                    <a class="btn btn-outline-dark" href={{link}}>{{name}}</a>
+                </div>
+                <div class="col-4 g-3">
+                    <a class="btn btn-outline-info">{{name}}</a>
+                </div>
+                {{/each}}
+
+                {{#each partners}}
+                <div class="col-4 g-3">
+
+                    <a href={{link}}>{{name}}</a>
+                </div>
+                <div class="col-4 g-3">
+
+                    <a class="btn btn-outline-dark" href={{link}}>{{name}}</a>
+                </div>
+                <div class="col-4 g-3">
+                    <a class="btn btn-outline-info">{{name}}</a>
+                </div>
+                {{/each}}
+
+
+
+                {{!-- {{> task31 href=navigation }} --}}
+
+                {{!-- {{> task31 link=socialMedia }} --}}
+
+                {{!-- {{> task31 link=partners }} --}}
+
+                {{/with}}
+                {{!--
+            </div> --}}
+
+        </section>
+    </main>
 </div>
