@@ -1,20 +1,26 @@
 {{#with text}}
 <div class="card">
     <ul class="nav">
-        <li class="nav-item col-5">
+        <li class="nav-item col-4">
             <p class="nav-link disabled">Shop</p>
         </li>
 
         {{#each links}}
+            {{#if href includeZero=false}}
+                <li class="nav-link">
+                    <a href={{href}}>{{text}}</a>
+                </li>
+                {{else}}
+                <li class="nav-link disabled">{{text}}</li>
 
-        <li class="nav-item">
-            <a href={{href}} class="nav-link">{{text}}</a>
-        </li>
+            {{/if}}
+
         {{/each}}
-        <li class="nav-item">
-            <a href="#" class="nav-link  disabled">Disabled</a>
-        </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link  disabled">Disabled</a>
+            </li>
     </ul>
 
 </div>
 {{/with}}
+
