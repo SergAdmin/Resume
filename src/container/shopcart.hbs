@@ -1,7 +1,82 @@
 <div>
     <main>
-        <section>
+        <section class="row">
+            {{#with header}}
+            <b class="display-5 mb-2">{{title}}</b>
+            <div>
+            <a class="btn btn-outline-secondary" href={{button.link}}>{{button.text}}</a>
+            </div>
+            {{/with}}
+
+            <hr class="mb-4 mt-4">
             
+            {{> cartsGoodItem text=goodsBlock}}
+
+            <hr class="mt-4 mb-4">
+
+            <div class="col-4 mb-3">
+                {{#with total}}
+                <b class="fs-4">{{title}}</b><br>
+                <b class="fs-1">{{amount}}</b>
+                <br>
+                <p class="fs-6">{{delivery}}</p>
+                {{#each buttons}}
+                {{#if isSuccess}}
+                    <span class="btn btn-success mb-3">{{text}}</span>
+                {{/if}}  
+                {{#if isOutline}}
+                    <span class="btn btn-outline-success mb-3">{{text}}</span>
+                {{/if}} 
+                {{/each}}
+                {{/with}}
+            </div>
+
+            <hr>
+
+            {{#with goodsOtherBlock}}
+            <span class="text-center mb-3">{{title}}</span>
+            
+                {{#each cards}}
+                <div class="col-4 m-0 mb-1">
+                    <div class="card">
+                           
+                        <img src={{image}} class="card-img-top">
+                        
+                        <div>
+                            <span class="card-title text-capitalize"> {{title}}
+                           
+                                {{#if isHot}}
+                                    <span class="badge round-pill text-bg-warning">HOT!</span>
+                                {{/if}}
+                                {{#if idNew}}
+                                    <span class="badge round-pill text-bg-info">New</span>
+                                {{/if}}
+                            </span>
+                        </div>
+                        
+                        <span class="card-body mb-1 pb-1"></span>
+                        <span>{{description}}</span>
+
+                    </div>
+                    </div>
+                {{/each}}
+            
+            {{/with}}
+
+            <hr class="mb-4 mt-4">
+            
+            <div class="card text-bg-dark">
+            {{#with subscribe}}
+            <h2>{{header}}</h2>
+            <p>{{description}}</p>
+            {{#each buttons}}
+            <div class="mb-2">
+                <a href={{link}} class="btn btn-primary">{{text}}</a>
+            </div>
+            {{/each}}
+            
+            {{/with}}
+            </div>
         </section>
     </main>
 </div>
