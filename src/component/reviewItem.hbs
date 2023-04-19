@@ -1,0 +1,50 @@
+{{#each reviewList}}
+                <div class="card mb-5">
+                    <div class="card m-2 p-2">    
+                        <div class="card-title list-group p-2">
+                            {{#with this.title}}  
+                                     <b class="mb-3">{{userName}} </b> 
+                                     <p>{{caption}} </p>              
+                                    <p>{{date}} </p>                        
+                            {{/with}}
+                        </div>
+                        <div class="card-body">
+                            {{#with this.reviewBody}}
+                                {{#with this.seller}}
+                                    <p>{{title}}: {{value}}</p>                        
+                                {{/with}}
+                                {{#with this.rating}}
+                                    <p>{{title}}: 
+                                        {{value}}</p>
+                                {{/with}}
+                                {{#each this.text}}
+                                    <p>{{this}}</p>
+                                {{/each}}
+                                
+                                {{#with this.advantages}}
+                                    <b>{{title}}: </b> 
+                                    <p>{{text}}</p>
+                                {{/with}}
+                                {{#with this.disadvantages}}
+                                    <b>{{title}}: </b> 
+                                    <p>{{text}}</p>
+                                {{/with}}
+                                {{#each images}}
+                                    <img src={{this}}>
+                                {{/each}}
+                        </div>         
+                </div>              
+                                {{#each coments}}
+                                    <div class="card m-3 p-2">
+                                        
+                                        <b class="mb-3">{{userName}}</b>
+                                        <p>{{date}}</p>
+                                        <p>{{text}}</p>
+                                    
+                                    </div> 
+                                {{/each}}
+
+                            {{/with}}
+                        {{!-- </div> --}}
+                    </div>
+                {{/each}}    
