@@ -10,7 +10,9 @@
 
             <hr class="mb-4 mt-4">
             
-            {{> cartsGoodItem text=goodsBlock}}
+            {{#each goodsBlock}}
+                {{> cartsGoodItem text=this}}
+            {{/each}}
 
             <hr class="mt-4 mb-4">
 
