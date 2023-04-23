@@ -1,11 +1,38 @@
-{{!-- 
-Це код container файлу для index сторінки, 
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
- --}}
+<main>
+    <section class="row g-5 m-4">
 
-<h1>Hello world</h1>
+       
+        <h2>Список сторінок</h2>
 
-{{!-- 
-    Цей код містить лише те, що буде виводитись в <body>
-    Адже наш layout/default.hbs має вже структуру HTML
---}}
+        <q>`Будь яка інформація, поки що будь про що...`</q>
+
+        <div class="index col-1">
+       
+           {{> nav }}
+           
+        </div>
+        
+    </section> 
+    <style>
+
+        div.index a {
+            background-color: #5a7ecd;
+            float: left;
+            font-size: 24px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            margin: 2px;
+            border-radius: 12px;
+            text-decoration: none;
+
+            }  
+   
+        div.index li.breadcrumb-item+.breadcrumb-item::before
+        {
+            content: "";
+        }
+ 
+
+    </style>  
+</main>

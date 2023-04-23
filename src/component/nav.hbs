@@ -1,16 +1,41 @@
 <nav>
-    {{> link text="Summary" href="/summary" line=true }}
-    {{> link text="Skills" href="/skills" line=true }}
-    {{> link text="Education" href="/education" line=true }}
-    {{> link text="Work" href="/work" line=true line=true }}
-    {{> link text="Person" href="/person" line=true }}
-    {{> link text="Bio" href="/bio" line=true }}
-    {{> link text="Program" href="/program" line=true }}
-    {{> link text="Web" href="/web" line=true }}
-    {{> link text="Js" href="/js" line=true }}
-    {{> link text="Car" href="/car" line=true }}
-    {{> link text="Mac" href="/mac" line=true noLine=true }}
-    {{!-- <a href="/summary">Summary</a>
-    <a href="/skills">Skills</a> --}}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">{{> link text="Summary" href="/summary" line=true }}</li>                    
+        <li class="breadcrumb-item">{{> link text="Skills" href="/skills" line=true }}</li>  
+        <li class="breadcrumb-item">{{> link text="Education" href="/education" line=true }}</li>  
+        <li class="breadcrumb-item">{{> link text="Work" href="/work" line=true line=true }}</li>  
+        <li class="breadcrumb-item">{{> link text="Person" href="/person" line=true }}</li>  
+        <li class="breadcrumb-item">{{> link text="Bio" href="/bio" line=true }}</li>  
+        <li class="breadcrumb-item">{{> link text="Program" href="/program" line=true }}</li>  
+        <li class="breadcrumb-item">{{> link text="Web" href="/web" line=true }}</li>  
+        <li class="breadcrumb-item">{{> link text="Js" href="/js" line=true }}</li>  
+        <li class="breadcrumb-item">{{> link text="Car" href="/car" line=true }}</li>  
+        <li class="breadcrumb-item">{{> link text="Mac" href="/mac" line=true noLine=true }}</li>  
+        <li class="breadcrumb-item">{{> link text="Facebook" href="/facebook" line=true noLine=true }}</li> 
+        <li class="breadcrumb-item">{{> link text="Task21" href="/task21" line=true noLine=true }}</li> 
+        <li class="breadcrumb-item">{{> link text="Task22" href="/task22" line=true noLine=true }}</li> 
+        <li class="breadcrumb-item">{{> link text="Task31" href="/task31" line=true noLine=true }}</li> 
+        <li class="breadcrumb-item">{{> link text="Shophome" href="/shophome" line=true noLine=true }}</li> 
+        <li class="breadcrumb-item">{{> link text="Shopproduct" href="/shopproduct" line=true noLine=true }}</li> 
+        <li class="breadcrumb-item">{{> link text="Shopnews" href="/shopnews" line=true noLine=true }}</li> 
+        <li class="breadcrumb-item">{{> link text="Shoporder" href="/shoporder" line=true noLine=true }}</li> 
+        <li class="breadcrumb-item">{{> link text="Shopnews" href="/shopnews" line=true noLine=true }}</li> 
+        <li class="breadcrumb-item">{{> link text="Shopcart" href="/shopcart" line=true noLine=true }}</li> 
+        <li class="breadcrumb-item">{{> link text="Shopprofile" href="/shopprofile" line=true noLine=true }}</li> 
+        <li class="breadcrumb-item">{{> link text="Shopreview" href="/shopreview" line=true noLine=true }}</li> 
+        <li class="breadcrumb-item">{{> link text="Shopcatalog" href="/shopcatalog" line=true noLine=true }}</li>
+        <li class="breadcrumb-item">{{> link text="Index" href="/index" line=true noLine=true }}</li>  
+
+    </ol>
 
 </nav>
+
+
+
+
+{{!-- <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Library</li>
+  </ol>
+</nav> --}}
